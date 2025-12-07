@@ -29,10 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     trigger.addEventListener("mouseenter", openMenu);
-    dropdown.addEventListener("mouseleave", (event) => {
-      if (dropdown.contains(event.relatedTarget)) return;
-      closeMenu();
-    });
+    dropdown.addEventListener("mouseleave", closeMenu);
     trigger.addEventListener("focus", openMenu);
     dropdown.addEventListener("focusout", (event) => {
       if (!dropdown.contains(event.relatedTarget)) {
