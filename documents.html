@@ -16,6 +16,7 @@
     <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
+
       <li class="dropdown">
         <button type="button">About Us ▾</button>
         <div class="dropdown-menu">
@@ -25,6 +26,7 @@
           <a href="competitions.html">Competitions</a>
         </div>
       </li>
+
       <li class="dropdown">
         <button type="button">Resources ▾</button>
         <div class="dropdown-menu">
@@ -36,26 +38,85 @@
   </header>
 
   <main>
-    <section class="page-header">
-      <h1>Documents</h1>
-      <p>Engineering notebooks, guides, and official documents for the team.</p>
-    </section>
+  <section class="page-header">
+    <h1>Engineering Notebooks</h1>
+    <p>
+      Here you can browse and download our engineering notebooks across different seasons.
+      Each notebook documents our design evolution, strategy research, testing results, and programming progress.
+    </p>
+  </section>
 
-    <section class="card">
-      <h2>Engineering Notebooks</h2>
-      <p>Placeholder for links to PDF exports or images of your notebooks.</p>
-    </section>
+  <!-- High Stakes -->
+  <section class="doc-row card">
+    <div class="doc-left">
+      <h2>High Stakes Season</h2>
 
-    <section class="card" style="margin-top: 1rem;">
-      <h2>Team Policies</h2>
-      <p>Describe expectations, safety rules, and code of conduct for team members.</p>
-    </section>
+      <div class="doc-preview">
+        <iframe src="assets/notebooks/high-stakes-notebook.pdf" title="High Stakes Notebook preview"></iframe>
+      </div>
 
-    <section class="card" style="margin-top: 1rem;">
-      <h2>Training Materials</h2>
-      <p>Links to onboarding documents for new members and season kickoff materials.</p>
-    </section>
-  </main>
+      <p class="doc-download">
+        <a href="assets/notebooks/high-stakes-notebook.pdf" download>
+          ⬇ Download High Stakes Notebook (PDF)
+        </a>
+      </p>
+    </div>
+
+    <div class="doc-right">
+      <h3>Season Overview</h3>
+      <p>
+        The High Stakes season focused on multi-stage mechanisms, rapid cycling, and coordinated team strategy.
+        Our engineering notebook includes mechanical experiments, autonomous path planning, driver practice logs,
+        and full match analysis logs from qualifiers to advanced rounds.
+      </p>
+
+      <p>
+        Key highlights include:
+      </p>
+      <ul>
+        <li>Early-stage drivebase prototypes and powertrain testing</li>
+        <li>Design rationale behind final intake and scoring system</li>
+        <li>Autonomous tuning logs using PID and motion profiles</li>
+        <li>Match strategy refinement across the season</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- Push Back -->
+  <section class="doc-row card">
+    <div class="doc-left">
+      <h2>Push Back Season</h2>
+
+      <div class="doc-preview">
+        <iframe src="assets/notebooks/push-back-notebook.pdf" title="Push Back Notebook preview"></iframe>
+      </div>
+
+      <p class="doc-download">
+        <a href="assets/notebooks/push-back-notebook.pdf" download>
+          ⬇ Download Push Back Notebook (PDF)
+        </a>
+      </p>
+    </div>
+
+    <div class="doc-right">
+      <h3>Season Overview</h3>
+      <p>
+        The Push Back season emphasized precision control, consistent scoring mechanisms, and advanced driver optimization.
+        This notebook thoroughly documents our prototype evolution, stress-testing results, coding decisions, and scrimmage learnings.
+      </p>
+
+      <p>Key highlights include:</p>
+      <ul>
+        <li>Initial system sketches and concept ideation</li>
+        <li>Material testing and rigidity optimization</li>
+        <li>Autonomous consistency data across practices</li>
+        <li>Performance metrics and scrimmage summaries</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
 
   <footer>
     © 2025 Beijing Academy VEX Robotics Team
