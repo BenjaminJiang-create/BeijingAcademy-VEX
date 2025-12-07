@@ -100,8 +100,9 @@ main {
   background-color: #1f2937;
 }
 
-/* hover 打开下拉（桌面端） */
-.dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu,
+.dropdown.open .dropdown-menu {
   display: block;
 }
 
