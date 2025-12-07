@@ -12,45 +12,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   dropdowns.forEach((dropdown) => {
     const trigger = dropdown.querySelector("button");
-    const menu = dropdown.querySelector(".dropdown-menu");
 
-    if (!trigger || !menu) return;
-
-    let closeTimeout;
+    if (!trigger) return;
 
     trigger.setAttribute("aria-haspopup", "true");
     trigger.setAttribute("aria-expanded", "false");
 
     const openMenu = () => {
-      clearTimeout(closeTimeout);
       dropdown.classList.add("open");
       trigger.setAttribute("aria-expanded", "true");
     };
 
     const closeMenu = () => {
-      clearTimeout(closeTimeout);
       dropdown.classList.remove("open");
       trigger.setAttribute("aria-expanded", "false");
     };
 
-    const scheduleClose = () => {
-      clearTimeout(closeTimeout);
-      closeTimeout = setTimeout(closeMenu, 150);
-    };
-
     trigger.addEventListener("mouseenter", openMenu);
-    menu.addEventListener("mouseenter", openMenu);
-
-    dropdown.addEventListener("mouseleave", (event) => {
-      if (dropdown.contains(event.relatedTarget)) return;
-      scheduleClose();
-    });
-
+    dropdown.addEventListener("mouseleave", closeMenu);
     trigger.addEventListener("focus", openMenu);
-    menu.addEventListener("focus", openMenu);
     dropdown.addEventListener("focusout", (event) => {
       if (!dropdown.contains(event.relatedTarget)) {
-        scheduleClose();
+        closeMenu();
       }
     });
 
@@ -58,9 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
       const isOpen = dropdown.classList.toggle("open");
       trigger.setAttribute("aria-expanded", String(isOpen));
-      if (isOpen) {
-        clearTimeout(closeTimeout);
-      }
     });
   });
 
