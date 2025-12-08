@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <title>What is VEX | Beijing Academy VEX Robotics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- 全局样式 + 本页面样式 -->
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="what-is-vex.css">
+
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -35,12 +39,10 @@
     </ul>
   </header>
 
-  <!-- ============================= -->
-  <!--  第一屏：红色 + 白色 = 100vh    -->
-  <!-- ============================= -->
+  <!-- 第一屏：Hero + Intro，全宽区域 -->
   <section class="wiv-fold">
 
-    <!-- 上半：红色 Hero，100vw 宽 -->
+    <!-- 上半：红色 Hero -->
     <div class="wiv-hero">
       <div class="wiv-inner">
         <h1 class="wiv-hero-title">What is VEX?</h1>
@@ -85,10 +87,8 @@
 
   </section>
 
-  <!-- ============================= -->
-  <!--  后面内容：正常 main 宽度       -->
-  <!-- ============================= -->
-  <main>
+  <!-- 下方内容区：Numbers + Why VEX，用 main 包起来 -->
+  <main class="wiv-main">
 
     <section class="wiv-band wiv-band-gray">
       <div class="wiv-inner">

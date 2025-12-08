@@ -1,0 +1,217 @@
+/* =============================
+   WHAT IS VEX 页面专用样式
+   结构清晰，不修改全局 main/body
+   ============================= */
+
+/* 第一屏整体容器（Hero + Intro） */
+.wiv-fold {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* --------------------------------------
+   Hero 区块（上半部分）
+--------------------------------------- */
+.wiv-hero {
+  flex: 0 0 42vh;
+  background: #7a001f;
+  color: #f9fafb;
+  display: flex;
+  align-items: center;
+}
+
+.wiv-inner {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.wiv-hero-title {
+  font-size: 2.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.wiv-hero-subtitle {
+  font-size: 1rem;
+  max-width: 640px;
+  color: #e5e7eb;
+}
+
+/* --------------------------------------
+   Intro 区块（下半部分）
+--------------------------------------- */
+.wiv-intro {
+  flex: 1;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.wiv-split {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.wiv-split-text {
+  flex: 1.1;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.wiv-split-text p + p {
+  margin-top: 0.75rem;
+}
+
+.wiv-split-media {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* 视频容器：16:9 + 圆角 + 阴影 */
+.wiv-video {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  padding-top: 56.25%; /* 16:9 */
+  border-radius: 0.9rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  background: #000;
+}
+
+.wiv-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* --------------------------------------
+   下方内容区域（Numbers + Why VEX）
+--------------------------------------- */
+.wiv-main {
+  max-width: 1100px;
+  margin: 4rem auto 3rem;
+  padding: 0 2rem;
+}
+
+/* 通用色块 */
+.wiv-band {
+  margin-bottom: 2.5rem;
+}
+
+.wiv-band-gray {
+  background: #f3f4f6;
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+}
+
+.wiv-band-light {
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+}
+
+.wiv-band h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+/* --------------------------------------
+   Numbers 区域
+--------------------------------------- */
+.wiv-metrics-intro {
+  font-size: 0.95rem;
+  color: #4b5563;
+  max-width: 640px;
+}
+
+.wiv-metrics-grid {
+  margin-top: 1.4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+}
+
+.wiv-metric {
+  padding: 1rem 1.1rem;
+  border-radius: 0.9rem;
+  background: #e5e7eb;
+}
+
+.wiv-metric-number {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.wiv-metric-label {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-top: 0.25rem;
+}
+
+.wiv-metrics-note {
+  margin-top: 1.2rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* --------------------------------------
+   Why VEX 区域
+--------------------------------------- */
+.wiv-band-light p {
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.wiv-why-list {
+  margin: 0.6rem 0 0.8rem;
+  padding-left: 1.4rem;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.wiv-why-list li + li {
+  margin-top: 0.45rem;
+}
+
+/* --------------------------------------
+   响应式布局
+--------------------------------------- */
+@media (max-width: 900px) {
+  .wiv-fold {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .wiv-hero {
+    flex: 0 0 auto;
+    padding: 3.5rem 0 2.5rem;
+  }
+
+  .wiv-intro {
+    flex: 0 0 auto;
+    padding: 2.5rem 0;
+  }
+
+  .wiv-split {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .wiv-video {
+    max-width: 100%;
+  }
+
+  .wiv-main {
+    margin-top: 3rem;
+  }
+}

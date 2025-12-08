@@ -4,16 +4,22 @@
   <meta charset="UTF-8">
   <title>Documents | Beijing Academy VEX Robotics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- 全局样式 + 本页面样式 -->
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="docs.css">
+
   <script src="script.js" defer></script>
 </head>
-<body>
+<body class="page-documents">
 
   <header class="navbar">
     <div class="logo">
       <a href="index.html">Beijing Academy VEX</a>
     </div>
+
     <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
 
@@ -38,81 +44,86 @@
   </header>
 
   <main class="main-wide">
-  <section class="page-header">
-    <h1>Engineering Notebooks</h1>
-    <p>
-      Here you can browse and download our engineering notebooks across different seasons.
-      Each notebook documents our design evolution, strategy research, testing results, and programming progress.
-    </p>
-  </section>
+    <!-- 页面标题 -->
+    <section class="page-header">
+      <h1>Engineering Notebooks</h1>
+      <p>
+        Here you can browse and download our engineering notebooks across different seasons.
+        Each notebook documents our design evolution, strategy research, testing results, and programming progress.
+      </p>
+    </section>
 
-  <!-- High Stakes -->
-  <section class="doc-row card">
-    <div class="doc-left">
-      <h2>High Stakes Season (2024-2025)</h2>
+    <!-- High Stakes -->
+    <section class="doc-row card">
+      <div class="doc-left">
+        <h2>High Stakes Season (2024–2025)</h2>
 
-      <div class="doc-preview">
-        <iframe src="assets/notebooks/high-stakes-notebook.pdf" title="High Stakes Notebook preview"></iframe>
+        <div class="doc-preview">
+          <iframe
+            src="assets/notebooks/high-stakes-notebook.pdf"
+            title="High Stakes Notebook preview">
+          </iframe>
+        </div>
+
+        <p class="doc-download">
+          <a href="assets/notebooks/high-stakes-notebook.pdf" download>
+            ⬇ Download High Stakes Notebook (PDF)
+          </a>
+        </p>
       </div>
 
-      <p class="doc-download">
-        <a href="assets/notebooks/high-stakes-notebook.pdf" download>
-          ⬇ Download High Stakes Notebook (PDF)
-        </a>
-      </p>
-    </div>
+      <div class="doc-right">
+        <h3>Season Overview</h3>
+        <p>
+          The High Stakes season focused on multi-stage mechanisms, rapid cycling, and coordinated team strategy.
+          Our engineering notebook includes mechanical experiments, autonomous path planning, driver practice logs,
+          and full match analysis logs from qualifiers to advanced rounds.
+        </p>
 
-    <div class="doc-right">
-      <h3>Season Overview</h3>
-      <p>
-        The High Stakes season focused on multi-stage mechanisms, rapid cycling, and coordinated team strategy.
-        Our engineering notebook includes mechanical experiments, autonomous path planning, driver practice logs,
-        and full match analysis logs from qualifiers to advanced rounds.
-      </p>
+        <ul>
+          <li>Early-stage drivebase prototypes and powertrain testing</li>
+          <li>Design rationale behind final intake and scoring system</li>
+          <li>Autonomous tuning logs using PID and motion profiles</li>
+          <li>Match strategy refinement across the season</li>
+        </ul>
+      </div>
+    </section>
 
-      <ul>
-        <li>Early-stage drivebase prototypes and powertrain testing</li>
-        <li>Design rationale behind final intake and scoring system</li>
-        <li>Autonomous tuning logs using PID and motion profiles</li>
-        <li>Match strategy refinement across the season</li>
-      </ul>
-    </div>
-  </section>
+    <!-- Push Back -->
+    <section class="doc-row card">
+      <div class="doc-left">
+        <h2>Push Back Season (2025–2026)</h2>
 
+        <div class="doc-preview">
+          <iframe
+            src="assets/notebooks/push-back-notebook.pdf"
+            title="Push Back Notebook preview">
+          </iframe>
+        </div>
 
-  <!-- Push Back -->
-  <section class="doc-row card">
-    <div class="doc-left">
-      <h2>Push Back Season (2025-2026)</h2>
-
-      <div class="doc-preview">
-        <iframe src="assets/notebooks/push-back-notebook.pdf" title="Push Back Notebook preview"></iframe>
+        <p class="doc-download">
+          <a href="assets/notebooks/push-back-notebook.pdf" download>
+            ⬇ Download Push Back Notebook (PDF)
+          </a>
+        </p>
       </div>
 
-      <p class="doc-download">
-        <a href="assets/notebooks/push-back-notebook.pdf" download>
-          ⬇ Download Push Back Notebook (PDF)
-        </a>
-      </p>
-    </div>
+      <div class="doc-right">
+        <h3>Season Overview</h3>
+        <p>
+          The Push Back season emphasized precision control, consistent scoring mechanisms, and advanced driver optimization.
+          This notebook thoroughly documents our prototype evolution, stress-testing results, coding decisions, and scrimmage learnings.
+        </p>
 
-    <div class="doc-right">
-      <h3>Season Overview</h3>
-      <p>
-        The Push Back season emphasized precision control, consistent scoring mechanisms, and advanced driver optimization.
-        This notebook thoroughly documents our prototype evolution, stress-testing results, coding decisions, and scrimmage learnings.
-      </p>
-
-      <ul>
-        <li>Initial system sketches and concept ideation</li>
-        <li>Material testing and rigidity optimization</li>
-        <li>Autonomous consistency data across practices</li>
-        <li>Performance metrics and scrimmage summaries</li>
-      </ul>
-    </div>
-  </section>
-
-</main>
+        <ul>
+          <li>Initial system sketches and concept ideation</li>
+          <li>Material testing and rigidity optimization</li>
+          <li>Autonomous consistency data across practices</li>
+          <li>Performance metrics and scrimmage summaries</li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
   <footer>
     © 2025 Beijing Academy VEX Robotics Team
