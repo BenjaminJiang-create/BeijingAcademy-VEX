@@ -292,59 +292,53 @@ footer {
   }
 }
 
-/* ========== WHAT IS VEX 专用 ========== */
+/* =============================
+   WHAT IS VEX 页面专用样式
+   ============================= */
 
-/* 这一页 main 顶部不要留白（否则 Hero 上面会有空隙） */
-.no-main-top-margin {
-  margin-top: 0 !important;
+/* 确保页面没有奇怪的默认外边距 */
+body {
+  margin: 0;
 }
 
-/* 内容通用宽度容器 */
+/* 第一屏：整体容器 */
+.wiv-fold {
+  width: 100vw;              /* 你要的 100vw 宽度 */
+  min-height: 100vh;         /* 整块至少一屏高 */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 上半部分：红色 Hero */
+.wiv-hero {
+  flex: 0 0 42vh;            /* 红色大概占 40%–45% 屏幕高度，自己可以调 */
+  background: #7a001f;
+  color: #f9fafb;
+  display: flex;
+  align-items: center;
+}
+
+/* 下半部分：白色 Intro（文字+视频） */
+.wiv-intro {
+  flex: 1;                   /* 占剩下的高度 */
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+/* 通用内容宽度容器 */
 .wiv-inner {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
-/* ---------- 第一屏：红 + 白 = 100vh ---------- */
-
-/* 整个第一屏容器 */
-.wiv-fold {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* 上半：红色 Hero，高度用 vh 控制 */
-.wiv-hero {
-  flex: 0 0 42vh;           /* 想红色更高就改成 45vh / 50vh */
-  display: flex;
-  align-items: center;
-  background: #7a001f;
-  color: #f9fafb;
-  width: 100vw;
-}
-
-.wiv-main {
-  max-width: none;
-  width: 100vw;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* Hero 内部的文字样式 */
+/* Hero 文案 */
 .wiv-hero-title {
   font-size: 2.4rem;
   margin-bottom: 0.4rem;
 }
-
-.wiv-fullwidth {
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-  }
 
 .wiv-hero-subtitle {
   font-size: 1rem;
@@ -352,15 +346,7 @@ footer {
   color: #e5e7eb;
 }
 
-/* 下半：白色文字 + 视频，自动填满剩余高度 */
-.wiv-intro {
-  flex: 1;                 /* 剩下的高度全部给它 */
-  background: #ffffff;
-  display: flex;
-  align-items: center;      /* 垂直居中这块内容 */
-}
-
-/* 左右分栏 */
+/* Intro 左右分栏 */
 .wiv-split {
   display: flex;
   gap: 3rem;
@@ -383,12 +369,12 @@ footer {
   justify-content: center;
 }
 
-/* 视频 16:9 容器 */
+/* 视频容器：16:9，带圆角和阴影 */
 .wiv-video {
   position: relative;
   width: 100%;
-  max-width: 800px;        /* 想更大的话这里可以改成 900px */
-  padding-top: 56.25%;
+  max-width: 800px;
+  padding-top: 56.25%;       /* 16:9 */
   border-radius: 0.9rem;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
@@ -403,22 +389,29 @@ footer {
   border: none;
 }
 
-/* ---------- 后面两个色块：Numbers & Why VEX ---------- */
+/* 下面的色块区域（Numbers + Why VEX） */
+main {
+  max-width: 1100px;
+  margin: 4rem auto 3rem;
+  padding: 0 2rem;
+}
 
+/* 普通色块：不再 100vw，只用内容宽度，看起来更干净 */
 .wiv-band {
-  width: 100vw;
-  margin-left: calc(50% - 50vw); /* 拉满全宽 */
-  padding: 3rem 0;
+  margin-bottom: 2.5rem;
 }
 
 .wiv-band-gray {
   background: #f3f4f6;
-  color: #111827;
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
 }
 
 .wiv-band-light {
   background: #ffffff;
-  color: #111827;
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
 }
 
 .wiv-band h2 {
@@ -426,8 +419,7 @@ footer {
   margin-bottom: 0.8rem;
 }
 
-/* Numbers */
-
+/* Numbers 样式 */
 .wiv-metrics-intro {
   font-size: 0.95rem;
   color: #4b5563;
@@ -464,8 +456,7 @@ footer {
   color: #6b7280;
 }
 
-/* Why VEX */
-
+/* Why VEX 列表 */
 .wiv-band-light p {
   font-size: 0.95rem;
   color: #4b5563;
@@ -482,12 +473,11 @@ footer {
   margin-top: 0.45rem;
 }
 
-/* ---------- 响应式：手机/窄屏 ---------- */
-
+/* 响应式：窄屏时取消 100vh，改成正常滚动 */
 @media (max-width: 900px) {
-  /* 小屏幕不强制 100vh，避免挤得太满，改为正常滚动 */
   .wiv-fold {
-    height: auto;
+    width: 100%;
+    min-height: auto;
   }
 
   .wiv-hero {
@@ -509,7 +499,7 @@ footer {
     max-width: 100%;
   }
 
-  .wiv-band {
-    padding: 2.5rem 0;
+  main {
+    margin-top: 3rem;
   }
 }
