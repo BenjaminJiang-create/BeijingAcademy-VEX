@@ -20,10 +20,10 @@ body {
 
 main {
   flex: 1;
-  max-width: 960px;
+  max-width: 1200px;
   width: 100%;
-  margin: 8.5rem auto 2rem;
-  padding: 0 1.5rem;
+  margin: 9rem auto 3rem;
+  padding: 0 2rem;
 }
 
 /* ---- Navbar ---- */
@@ -136,7 +136,8 @@ main {
   background-color: white;
   border-radius: 0.75rem;
   padding: 1.25rem 1.3rem;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 6px rgba(15, 23, 42, 0.06);
+  margin: 3rem 0;  
 }
 
 .card h2 {
@@ -283,5 +284,61 @@ footer {
 @media (max-width: 900px) {
   .doc-row {
     flex-direction: column;
+  }
+}
+
+/* ---- What is VEX: 左右布局 ---- */
+
+.card.split-block {
+  display: flex;
+  align-items: center;   /* 垂直居中对齐文字和视频 */
+  gap: 3rem;             /* 左右两列之间的距离 */
+}
+
+/* 左侧文字 */
+.split-text {
+  flex: 1.1;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #111827;
+}
+
+/* 右侧视频：用 flex 把视频居中 */
+.split-media {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 16:9 自适应视频框 */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 560px;      /* 不要太宽 */
+  padding-top: 56.25%;   /* 16:9 比例 */
+  border-radius: 0.9rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  background: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* 窄屏时改成上下布局 */
+@media (max-width: 900px) {
+  .card.split-block {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .split-media {
+    justify-content: flex-start;  /* 手机上就左对齐也可以 */
   }
 }
