@@ -1,6 +1,5 @@
 /* =============================
    WHAT IS VEX 页面专用样式
-   结构清晰，不修改全局 main/body
    ============================= */
 
 /* 第一屏整体容器（Hero + Intro） */
@@ -12,6 +11,13 @@
   overflow: hidden;
 }
 
+main {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
 /* --------------------------------------
    Hero 区块（上半部分）
 --------------------------------------- */
@@ -20,7 +26,8 @@
   background: #7a001f;
   color: #f9fafb;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .wiv-inner {
@@ -31,14 +38,18 @@
 }
 
 .wiv-hero-title {
-  font-size: 2.4rem;
-  margin-bottom: 0.4rem;
+  margin-top: 8vh;
+  font-size: clamp(2.6rem, 3vw + 1.4rem, 3.4rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.6rem;
 }
 
 .wiv-hero-subtitle {
-  font-size: 1rem;
-  max-width: 640px;
+  font-size: 1.05rem;
+  max-width: 560px;
   color: #e5e7eb;
+  line-height: 1.7;
 }
 
 /* --------------------------------------
@@ -49,6 +60,7 @@
   background: #ffffff;
   display: flex;
   align-items: center;
+  padding: 3.5rem 0;
 }
 
 .wiv-split {
@@ -59,12 +71,13 @@
 
 .wiv-split-text {
   flex: 1.1;
-  font-size: 0.98rem;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #111827;
 }
 
 .wiv-split-text p + p {
-  margin-top: 0.75rem;
+  margin-top: 0.9rem;
 }
 
 .wiv-split-media {
@@ -73,12 +86,12 @@
   justify-content: center;
 }
 
-/* 视频容器：16:9 + 圆角 + 阴影 */
+/* 视频容器 */
 .wiv-video {
   position: relative;
   width: 100%;
   max-width: 800px;
-  padding-top: 56.25%; /* 16:9 */
+  padding-top: 56.25%;
   border-radius: 0.9rem;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
@@ -96,122 +109,190 @@
 /* --------------------------------------
    下方内容区域（Numbers + Why VEX）
 --------------------------------------- */
-.wiv-main {
-  max-width: 1100px;
-  margin: 4rem auto 3rem;
-  padding: 0 2rem;
-}
 
-/* 通用色块 */
 .wiv-band {
-  margin-bottom: 2.5rem;
+  width: 100%;
+  margin: 0;
+  padding: 4rem 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .wiv-band-gray {
   background: #f3f4f6;
-  padding: 2.5rem 2rem;
-  border-radius: 1rem;
 }
 
 .wiv-band-light {
   background: #ffffff;
-  padding: 2.5rem 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
 }
 
 .wiv-band h2 {
-  font-size: 1.6rem;
-  margin-bottom: 0.8rem;
+  font-size: clamp(1.9rem, 1.3vw + 1.2rem, 2.2rem);
+  font-weight: 650;
+  margin-bottom: 1rem;
 }
 
 /* --------------------------------------
-   Numbers 区域
+   VEX by the Numbers
 --------------------------------------- */
-.wiv-metrics-intro {
-  font-size: 0.95rem;
+
+.wiv-metrics {
+  background: #f3f4f6;
+  padding: 5rem 0 4.5rem;
+}
+
+.wiv-metrics-title {
+  font-size: clamp(2rem, 2.6vw + 1rem, 2.4rem);
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.wiv-metrics-subtitle {
+  max-width: 44rem;
+  font-size: 1.02rem;
+  line-height: 1.6;
   color: #4b5563;
-  max-width: 640px;
 }
 
 .wiv-metrics-grid {
-  margin-top: 1.4rem;
+  margin-top: 2.2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
 }
 
+/* 单个卡片 */
 .wiv-metric {
-  padding: 1rem 1.1rem;
-  border-radius: 0.9rem;
   background: #e5e7eb;
+  border-radius: 1.4rem;
+  padding: 3rem 2.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
+/* 数字在上 */
 .wiv-metric-number {
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-size: clamp(2rem, 2.4vw + 0.6rem, 2.5rem);
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.6rem;
+  line-height: 1.1;
 }
 
+/* 文字在下 */
 .wiv-metric-label {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  line-height: 1.35;
   color: #4b5563;
-  margin-top: 0.25rem;
+}
+
+.wiv-metric-label strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* 删除旧横向布局遗留 */
+.wiv-metric-main,
+.wiv-metric-text {
+  display: none !important;
 }
 
 .wiv-metrics-note {
-  margin-top: 1.2rem;
-  font-size: 0.85rem;
+  margin-top: 2.4rem;
+  font-size: 0.9rem;
   color: #6b7280;
 }
 
-/* --------------------------------------
-   Why VEX 区域
---------------------------------------- */
-.wiv-band-light p {
-  font-size: 0.95rem;
-  color: #4b5563;
+/* 响应式 */
+@media (max-width: 900px) {
+  .wiv-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
+@media (max-width: 600px) {
+  .wiv-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------
+   Why VEX Section
+--------------------------------------- */
+
+.wiv-why-intro strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* 整块 padding 加大 */
+.wiv-band.wiv-band-light {
+  padding-top: 4rem !important;
+  padding-bottom: 0.1rem !important;
+}
+
+/* 左右布局 */
+.wiv-why-layout {
+  display: flex;
+  align-items: center;   /* ⭐ bullet 整块与图片中心对齐 */
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+/* 左列（bullet block） */
+.wiv-why-text {
+  flex: 1.1;
+  display: flex;         /* 让整个 bullet 区垂直居中 */
+  align-items: center;
+}
+
+/* bullet 列 */
 .wiv-why-list {
-  margin: 0.6rem 0 0.8rem;
-  padding-left: 1.4rem;
-  font-size: 0.95rem;
-  color: #4b5563;
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.8;
 }
 
 .wiv-why-list li + li {
-  margin-top: 0.45rem;
+  margin-top: 0.5rem;
 }
 
-/* --------------------------------------
-   响应式布局
---------------------------------------- */
+/* 右列（图片） */
+.wiv-why-media {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.wiv-why-media img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+}
+
+/* 小屏幕上下堆叠 */
 @media (max-width: 900px) {
-  .wiv-fold {
-    width: 100%;
-    min-height: auto;
-  }
-
-  .wiv-hero {
-    flex: 0 0 auto;
-    padding: 3.5rem 0 2.5rem;
-  }
-
-  .wiv-intro {
-    flex: 0 0 auto;
-    padding: 2.5rem 0;
-  }
-
-  .wiv-split {
+  .wiv-why-layout {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .wiv-video {
-    max-width: 100%;
+  .wiv-why-text {
+    display: block;
   }
 
-  .wiv-main {
-    margin-top: 3rem;
+  .wiv-why-media img {
+    max-width: 420px;
   }
+}
+
+/* Footer 与上方内容保持良好呼吸感 */
+footer {
+  margin-top: 5rem;                  /* ⭐ 新增：给 footer 本身增加顶部间距 */
 }
