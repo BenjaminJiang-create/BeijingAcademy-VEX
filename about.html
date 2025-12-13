@@ -4,19 +4,22 @@
   <meta charset="UTF-8">
   <title>About Us | Beijing Academy VEX Robotics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <link rel="stylesheet" href="global.css">
   <link rel="stylesheet" href="about.css">
 
   <script src="script.js" defer></script>
 </head>
+
 <body class="page-about">
 
   <header class="navbar">
     <div class="logo">
       <a href="index.html">Beijing Academy VEX</a>
     </div>
+
     <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
 
@@ -40,8 +43,9 @@
     </ul>
   </header>
 
-  <!-- 顶部 Hero -->
+  <!-- 第一屏（Hero + Team Intro） -->
   <section class="about-fold">
+    <!-- 上半部分：Hero -->
     <div class="about-hero">
       <div class="about-inner">
         <h1 class="about-hero-title">About Us</h1>
@@ -51,15 +55,13 @@
         </p>
       </div>
     </div>
-  </section>
 
-  <main>
-    <!-- Team 区块（灰色背景） -->
-    <section class="about-section about-team">
+    <!-- 下半部分：Team（紧贴 Hero，不再有大空白） -->
+    <div class="about-intro">
       <div class="about-inner">
         <h2 class="about-section-title">
           Team
-          <span class="about-team-numbers">6353 / 30721 / 20139 / 3696</span>
+          <span class="about-team-numbers">30721 / 3696 / 6353 / 20139</span>
         </h2>
         <div class="about-section-underline"></div>
 
@@ -75,16 +77,15 @@
           </div>
 
           <div class="about-col about-image">
-            <!-- 换成真实 team 图片即可 -->
-            <div class="about-image-placeholder">
-              img
-            </div>
+            <div class="about-image-placeholder">img</div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Team Awards 区块（白色背景） -->
+  <main>
+    <!-- Team Awards（第二屏开始） -->
     <section class="about-section about-awards">
       <div class="about-inner">
         <h2 class="about-section-title">Team Awards</h2>
@@ -95,9 +96,7 @@
           mauris mi volutpat lacus, eu dapibus magna leo ut turpis.
         </p>
 
-        <div class="about-table-placeholder">
-          TABLE
-        </div>
+        <div class="about-table-placeholder">TABLE</div>
       </div>
     </section>
   </main>
