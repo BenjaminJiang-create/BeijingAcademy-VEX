@@ -1,0 +1,189 @@
+/* Home page hero */
+.home-hero {
+  width: 100%;
+  height: 100vh;
+
+  /* 如果你的图片在 assets/ 里，用这一行 */
+  background-image: url("assets/images/home-hero.png");
+
+  /* 如果图片就在根目录，把上一行改成：
+     background-image: url("home-hero.PNG");
+  */
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* 防止某些浏览器出现奇怪的空白/抖动 */
+  display: block;
+}
+
+/* =========================
+   Home-only navbar styling
+   ========================= */
+
+body.home .navbar {
+  background: rgba(17, 24, 39, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+}
+
+/* 可选：如果你希望 hero 在移动端不被浏览器地址栏影响 */
+@supports (height: 100svh) {
+  .home-hero {
+    height: 100svh;
+  }
+}
+
+/* =========================
+   Home hero
+   ========================= */
+
+body.home .home-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  background-image: url("assets/images/home-hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Top fade: navbar -> image */
+
+/* 顶部：只覆盖上方一小段，用于和 navbar 融合 */
+body.home .home-hero::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 28vh;                /* 只影响顶部 */
+  background: linear-gradient(
+    to bottom,
+    rgba(17, 24, 39, 0.45),
+    rgba(17, 24, 39, 0)
+  );
+  pointer-events: none;
+}
+
+/* 底部：只覆盖底部一小段，让图片“落地”到页面背景色 */
+body.home .home-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 22vh;                /* 只影响底部 */
+  background: linear-gradient(
+    to top,
+    rgba(247, 247, 249, 1),
+    rgba(247, 247, 249, 0)
+  );
+  pointer-events: none;
+}
+
+@supports (height: 100svh) {
+  body.home .home-hero {
+    height: 100svh;
+  }
+}
+
+body.home .home-hero {
+  background-position: center 35%;
+}
+
+/* Home-only main reset */
+body.home .home-main {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  width: 100%;
+}
+
+/* Hero → Who 分隔线（红色细线） */
+body.home .home-sep {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(122, 0, 31, 0),
+    rgba(122, 0, 31, 0.9),
+    rgba(122, 0, 31, 0)
+  );
+}
+
+/* Who We Are section */
+body.home .who {
+  background: #f7f7f9;
+  padding: 4.5rem 0 4rem;
+}
+
+body.home .who-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 1.75rem;
+}
+
+body.home .who h2 {
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+body.home .who p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #374151;
+  max-width: 1000px;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 760px) {
+  body.home .who-facts {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* How We Work section */
+body.home .how {
+  background: #ffffff;
+  padding: 4.5rem 0 5rem;
+}
+
+body.home .how-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 1.75rem;
+}
+
+body.home .how h2 {
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+body.home .how p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #374151;
+  max-width: 1000px;
+  margin-bottom: 1rem;
+}
+
+/* Image block */
+body.home .how-image {
+  margin-top: 2.25rem;
+}
+
+body.home .how-image img {
+  width: 70%;
+  height: auto;
+  border-radius: 1rem;
+  display: block;
+  margin: 0 auto;
+}
