@@ -1,0 +1,242 @@
+/* =============================
+   TEAM STRUCTURE page style
+   Match about.css visual language
+   ============================= */
+
+.page-team-structure main {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.ts-fold {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.ts-inner {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Hero */
+.ts-hero {
+  flex: 0 0 42vh;
+  background: #7a001f;
+  color: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ts-image-img {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0.9rem;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+  display: block;
+}
+
+.ts-hero-title {
+  margin-top: 8vh;
+  font-size: clamp(2.6rem, 3vw + 1.4rem, 3.4rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.6rem;
+}
+
+.ts-hero-subtitle {
+  font-size: 1.05rem;
+  max-width: 760px;
+  color: #e5e7eb;
+  line-height: 1.7;
+}
+
+/* Intro (lower half of fold) */
+.ts-intro {
+  flex: 1;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 3.5rem 0;
+}
+
+.ts-section-title {
+  font-size: clamp(1.7rem, 1.2vw + 1.2rem, 2rem);
+  font-weight: 650;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.ts-subnote {
+  font-size: 1.05rem;
+  font-weight: 450;
+  color: #374151;
+}
+
+.ts-section-underline {
+  width: clamp(96px, 10vw, 140px);
+  height: 3px;
+  background: #8b1a25;
+  margin: 0.8rem 0 2rem;
+}
+
+/* Two-column */
+.ts-two-column {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  margin-top: 0.4rem;
+}
+
+.ts-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ts-text {
+  flex: 1.1;
+}
+
+.ts-text p {
+  font-size: 0.97rem;
+  line-height: 1.85;
+  color: #374151;
+  margin: 0;
+}
+
+.ts-text p + p {
+  margin-top: 0.9rem;
+}
+
+.ts-leadership-note {
+  color: #4b5563;
+}
+
+/* Placeholder image block */
+.ts-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.ts-image-placeholder {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 3;
+  background: #e5e7eb;
+  border-radius: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  font-size: 1.05rem;
+}
+
+/* Sections below */
+.ts-section {
+  width: 100%;
+  margin: 0;
+  padding: 4rem 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.ts-section-gray {
+  background: #f3f4f6;
+}
+
+.ts-section-light {
+  background: #ffffff;
+}
+
+.ts-section-intro {
+  max-width: 900px;
+  font-size: 0.97rem;
+  line-height: 1.8;
+  color: #4b5563;
+  margin-bottom: 1.8rem;
+}
+
+/* Cards */
+.ts-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.ts-card {
+  background: #ffffff;
+  border-radius: 0.9rem;
+  padding: 1.25rem 1.3rem;
+  box-shadow: 0 1px 6px rgba(15, 23, 42, 0.06);
+}
+
+.ts-card-title {
+  font-size: 1.05rem;
+  font-weight: 650;
+  color: #111827;
+  margin-bottom: 0.55rem;
+}
+
+.ts-card-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #374151;
+  margin: 0;
+}
+
+.ts-card-text + .ts-card-text {
+  margin-top: 0.7rem;
+}
+
+.ts-card-note {
+  margin-top: 0.85rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #6b7280;
+}
+
+.ts-wide {
+  grid-column: 1 / -1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ts-two-column {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ts-image {
+    justify-content: flex-start;
+  }
+
+  .ts-image-placeholder {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .ts-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .ts-wide {
+    grid-column: auto;
+  }
+}
